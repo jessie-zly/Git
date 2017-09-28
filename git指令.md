@@ -23,25 +23,33 @@ email@example.com : **注册 github 的邮箱**
 	2. ssh-T git@github.com		测试是否成功
 	
 
+##配置ignore文件##
+	仓库根目录下创建  .gitignore 文件
+	忽略 add进暂存区的文件/文件件格式
+	/文件夹名/
+	/文件名/
+	
+	不忽略某个文件夹/文件
+	!/文件夹/
+	!/文件/
+
 ## 常用指令
 
 	$ git init		初始化仓库
 	$ git status 	获取状态
 	$ ls -ah		显示隐藏文件
+
 	$ git add file		file和后缀名都要写
 	$ git add *		全部添加
 	$ git commit -m "提交说明"		提交文件
 	$ git remote add origin git@github.com:jessie-zly/-.git		关联自己GitHub上的仓库
 	$ git push -u origin master		推送文件到github
-	
 	$ git push origin master	
 
 	$ git fetch origin master 从远程仓库获取最新版本到本地
-
 	$ git merge origin/master 把远程下载下来的代码合并到本地仓库
 
 	$ git clone git@github.com:账号/仓库名.git
-
 
 
 ## 删除本地仓库
