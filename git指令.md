@@ -1,65 +1,54 @@
 # git 指令
 --------------------------
 
-
 ## 配置
 
-	$ git config --global user.name "Your Name"
-	$ git config --global user.email "email@example.com"
+`$ git config --global user.name "Your Name"`
+`$ git config --global user.email "email@example.com"`
 
-Your name: **github 账号**
+`Your name`: **github 账号**
 
-email@example.com : **注册 github 的邮箱**
-
+`email@example.com` : **注册 github 的邮箱**
 
 ##配置秘钥 ssh-keygen
+* 生成秘钥
 
-> 生成秘钥
+`$ ssh-keygen -t rsa -C "youremail@example.com"`
 
-	1. $ ssh-keygen -t rsa -C "youremail@example.com"
+* 测试秘钥是否成功
 
-> 测试秘钥是否成功
-
-	2. ssh-T git@github.com		测试是否成功
+`$ ssh-T git@github.com` 测试是否成功
 	
 
 ##配置ignore文件##
-	仓库根目录下创建  .gitignore 文件
-	忽略 add进暂存区的文件/文件件格式
-	/文件夹名/
-	/文件名/
+* 仓库根目录下创建  `.gitignore` 文件
+
+忽略 add进暂存区的文件/文件件格式
+
+`/文件夹名/`或`/文件名/`
 	
-	不忽略某个文件夹/文件
-	!/文件夹/
-	!/文件/
+不忽略某个文件夹/文件
+
+`!/文件夹/`或`!/文件/`
 
 ## 常用指令
-
-	$ git init		初始化仓库
-	$ git status 	获取状态
-	$ ls -ah		显示隐藏文件
-
-	$ git add file		file和后缀名都要写
-	$ git add *		全部添加
-	$ git commit -m "提交说明"		提交文件
-	$ git remote add origin git@github.com:jessie-zly/-.git		关联自己GitHub上的仓库
-	$ git push -u origin master		推送文件到github
-	$ git push origin master	
-
-	$ git fetch origin master 从远程仓库获取最新版本到本地
-	$ git merge origin/master 把远程下载下来的代码合并到本地仓库
-
-	$ git clone git@github.com:账号/仓库名.git
-
+* `$ git init` 初始化仓库
+* `$ git status` 获取状态
+* `$ ls -ah` 显示隐藏文件
+* `$ git add file` file和后缀名都要写
+* `$ git add .` 全部添加
+* `$ git commit -m "提交说明"` 提交文件
+* `$ git remote add origin git@github.com:jessie-zly/-.git` 关联自己GitHub上的仓库
+* `$ git push -u origin master` 推送文件到github
+* `$ git push origin master`
+* `$ git fetch origin master` 从远程仓库获取最新版本到本地
+* `$ git merge origin/master` 把远程下载下来的代码合并到本地仓库
+* `$ git pull origin master`
+* `$ git clone git@github.com:账号/仓库名.git` 克隆仓库
 
 ## 删除本地仓库
-
-	 $ find . -name ".git" | xargs rm -Rf
-
-> **即删除本地仓库中的.git文件夹**
-	
-	
-
+* `$ find . -name ".git" | xargs rm -Rf`
+**即删除本地仓库中的.git文件夹**
 
 # git使用时出现的问题
 ------------
@@ -75,15 +64,9 @@ email@example.com : **注册 github 的邮箱**
 		hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 
 原因:
-
 **GitHub远程仓库中的README.md文件不在本地仓库中**
 
 解决方案:
 
-执行
-	
-	git pull --rebase origin master
-
-再执行
-
-	git push -u origin master
+1. 执行 `$ git pull --rebase origin master`
+2. 再执行 `$ git push -u origin master`
