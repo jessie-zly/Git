@@ -56,6 +56,27 @@
 * `$ find . -name ".git" | xargs rm -Rf`
 **即删除本地仓库中的.git文件夹**
 
+## 分支
+* `git branch` 查看分支
+* `git branch <branch-name>` 创建分支
+* `git checkout <branch-name>` 切换分支
+* `git checkout -b <branch-name>` 创建并切换至该分支
+* `git merge <branch-name>` 合并分支到当前分支
+* `git merge --no-ff -m "<commit-message>" <branch-name>` 合并分支,并添加`commit`信息
+* `git branch -d <branch-name>` 删除分支
+* `git branch -D <branch-name>` 强行删除分支
+* `git log --graph` 查看分支合并情况
+* `git log --graph --pretty=oneline --abbrev-commit` 查看分支合并情况
+* `git checkout -b <branch-name> <response-name>/<branch-name>` 创建远程<response-name>库的<branch-name>分支到本地
+* `git branch --set-upstream <branch-name> origin/<branch-name>` 建立本地分支和远程分支的链接
+
+## 工作区
+* `git status` 查看工作区
+* `git stash` 储存工作区
+* `git stash list` 查看工作区
+* `git stash apply` 恢复工作区，但stash内容并不删除
+* `git stash drop` 删除stash内容
+* `git stash pop` 恢复工作区,同时删除stash内容
 ## 同时关联Gitee和GitHub
 `git remote -v` 查看远程库信息
 
