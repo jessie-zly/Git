@@ -67,8 +67,8 @@
 `git remote add github git@github.com:jessie-zly/<project-name>.git` 
 
 ## 同时提交至Gitee和GitHub上对应的分支
-`git push github <branch-name>`
-`git push gitee <branch-name>`
+* `git push github <branch-name>`
+* `git push gitee <branch-name>`
 
 
 
